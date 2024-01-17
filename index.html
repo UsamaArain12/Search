@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Itaque corporis consequuntur, adipisci ab tempore exercitationem incidunt qui natus quia sunt,
+        ipsum quibusdam nemo expedita deleniti, consectetur dolorum modi quas autem quis! Dolores,
+        dolore eligendi repudiandae nam saepe reiciendis et quasi omnis explicabo id accusantium,
+        ipsa itaque iusto fuga? Quo sed earum voluptas commodi iure soluta et vero,
+        non optio voluptatibus nostrum rerum natus consectetur laudantium eveniet
+        debitis quae ratione recusandae. Iure distinctio aliquam enim asperiores
+        dolore illo fugit doloremque ex. Quo maiores, placeat, odit totam ipsam
+        fuga adipisci quisquam commodi ipsa blanditiis error harum deleniti atque velit id,
+        laboriosam deserunt dicta accusamus quae eveniet exercitationem dolorum aut vel voluptates!
+        Et consequuntur nemo voluptatibus facere id impedit repudiandae sapiente culpa assumenda,
+        est explicabo non aut eos tempora, dolor quae, voluptatem in ex molestiae?
+    </div>
+
+    <div class="search2">
+        <h3>Search Latter is : </h3>
+        <h3 id="search1"> </h3>
+    </div>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button type="button" onclick="highlightText(); getValue()">Search</button>
+
+    <script>
+
+
+        function highlightText() {
+            const searchInput = document.getElementById('searchInput');
+            const searchValue = searchInput.value.trim();
+            const contentElement = document.querySelector('.content');
+
+            if (searchValue !== '') {
+                const content = contentElement.textContent;
+                const regex = new RegExp(searchValue, 'gi');
+                const highlightedContent = content.replace(
+                    regex,
+                    (match) => `<span class="highlight">${match}</span>`
+                );
+                contentElement.innerHTML = highlightedContent;
+            } else {
+                contentElement.innerHTML = contentElement.textContent;
+            }
+
+        }
+        function getValue() {
+            let text1 = document.getElementById("searchInput").value;
+            document.getElementById("search1").innerHTML = text1
+        }
+
+    </script>
+
+</body>
+
+</html>

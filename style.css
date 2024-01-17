@@ -1,0 +1,17 @@
+body{
+    margin: 20px;
+}
+
+  .highlight {
+     background-color: yellow;
+     font-weight: bold;
+  }
+  .content{
+    width: 50%;
+    font-size: larger;
+  }
+
+  .search2{
+        display: flex;
+
+  }
